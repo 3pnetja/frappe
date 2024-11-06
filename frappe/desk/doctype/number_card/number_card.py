@@ -66,7 +66,7 @@ class NumberCard(Document):
 				frappe.throw(_("Report Name and Function are required to create a number card"))
 			if self.function != "Count" and not self.report_field:
 				frappe.throw(
-					_("For functions other than Count, the report field is required to create a number card")
+					_("Report field is required to create a number card with function {}").format(self.function)
 				)
 
 		elif self.type == "Custom":
